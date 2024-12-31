@@ -26,14 +26,14 @@
         // Quando a página carregar
         window.onload = function () {
             // Obter valores das variáveis da URL
-            const numberValue = getQueryParam('number');
+            const codigoValue = getQueryParam('codigo');
             const fluxoValue = getQueryParam('fluxo');
 
             // Exibir valores na página
-            if (numberValue) {
-                document.getElementById('number-display').innerText = `Número do associado: ${numberValue}`;
+            if (codigoValue) {
+                document.getElementById('codigo-display').innerText = `Número do associado: ${codigoValue}`;
             } else {
-                document.getElementById('number-display').innerText = 'O número do associado não foi fornecido.';
+                document.getElementById('codigo-display').innerText = 'O número do associado não foi fornecido.';
             }
 
             if (fluxoValue) {
@@ -51,7 +51,7 @@
     <h1>Informações da Chamada</h1>
 
     <!-- Exibição de informações -->
-    <p id="number-display">Carregando número do associado...</p>
+    <p id="codigo-display">Carregando número do associado...</p>
     <p id="fluxo-display">Carregando fluxo...</p>
 
     <!-- Botão para abrir nova aba -->
