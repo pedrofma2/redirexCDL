@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Dados e Abrir Nova Aba</title>
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function abrirNovaAba() {
+            const aValue = getQueryParam('a');
+            if (aValue) {
+                const newUrl = `http://intracdlnet/Sistemas%20Aplicativos/DadosCadastrais/Cadastro.aspx?a=${aValue}`;
+                window.open(newUrl, '_blank');
+            } else {
+                alert('A variável "a" não foi fornecida.');
+            }
+        }
+
+        window.onload = function () {
+            const dadosValue = getQueryParam('dados');
+            if (dadosValue) {
+                document.getElementById('dados-display').innerText = `Dados recebidos: ${dadosValue}`;
+            } else {
+                document.getElementById('dados-display').innerText = 'A variável "dados" não foi fornecida.';
+            }
+        };
+    </script>
+</head>
+<body>
+    <img id="logo" src="https://raw.githubusercontent.com/Inovacomm/logo/main/tms_logo.png" alt="TMS Logo">
+    <h1>Informações Recebidas</h1>
+    <p id="dados-display">Carregando...</p>
+    <button onclick="abrirNovaAba()">Abrir dados do usuário</button>
+</body>
+<footer>
+    <img id="fornecedor-logo" src="https://raw.githubusercontent.com/Inovacomm/logo/main/logo_3cx-removebg-preview.png" alt="Fornecedor Logo">
+</footer>
+</html>

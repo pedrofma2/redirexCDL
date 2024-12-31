@@ -1,0 +1,108 @@
+<style>
+    /* Resetando margens e padding */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Estilizando o body */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #004c99, #0073e6); /* Tons de azul */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Estilizando o logo da empresa */
+    #logo {
+        width: 180px;
+        height: auto;
+        margin-top: 30px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Estilizando o título */
+    h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        color: #ffffff;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Estilizando os dados */
+    p {
+        font-size: 1.2rem;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 15px 30px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        max-width: 80%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    p:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-5px);
+    }
+
+    /* Estilizando o botão */
+    button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 30px;
+        background: #0073e6; /* Azul claro */
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: #005bb5; /* Azul mais escuro */
+        transform: translateY(-4px);
+    }
+
+    button:active {
+        background: #004c99; /* Azul escuro */
+        transform: translateY(2px);
+    }
+
+    /* Estilizando o rodapé com o logo do fornecedor */
+    footer {
+        margin-top: auto;
+        padding: 10px 0;
+    }
+
+    #fornecedor-logo {
+        width: 120px;
+        height: auto;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Animação de fade-in */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
