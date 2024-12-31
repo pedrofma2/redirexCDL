@@ -4,13 +4,15 @@
     <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exibir Dados e Abrir Nova Aba</title>
+    <title>Exibir Dados do Associado</title>
     <script>
+        // Função para obter parâmetros da URL
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
+        // Função para abrir nova aba com base na variável 'a'
         function abrirNovaAba() {
             const aValue = getQueryParam('a');
             if (aValue) {
@@ -21,23 +23,43 @@
             }
         }
 
+        // Quando a página carregar
         window.onload = function () {
+            // Obter valores das variáveis 'dados', 'a' e 'number'
             const dadosValue = getQueryParam('dados');
+            const numberValue = getQueryParam('number');
+
+            // Exibir valores na página
             if (dadosValue) {
                 document.getElementById('dados-display').innerText = `Dados recebidos: ${dadosValue}`;
             } else {
                 document.getElementById('dados-display').innerText = 'A variável "dados" não foi fornecida.';
             }
+
+            if (numberValue) {
+                document.getElementById('number-display').innerText = `Número do associado: ${numberValue}`;
+            } else {
+                document.getElementById('number-display').innerText = 'O número do associado não foi fornecido.';
+            }
         };
     </script>
 </head>
 <body>
+    <!-- Logotipo da empresa -->
     <img id="logo" src="https://raw.githubusercontent.com/Inovacomm/logo/main/tms_logo.png" alt="TMS Logo">
-    <h1>Informações Recebidas</h1>
-    <p id="dados-display">Carregando...</p>
+
+    <h1>Informações do Associado</h1>
+
+    <!-- Exibição de informações -->
+    <p id="dados-display">Carregando informações...</p>
+    <p id="number-display">Carregando número do associado...</p>
+
+    <!-- Botão para abrir nova aba -->
     <button onclick="abrirNovaAba()">Abrir dados do usuário</button>
+
+    <!-- Rodapé com o logotipo do fornecedor -->
+    <footer>
+        <img id="fornecedor-logo" src="https://raw.githubusercontent.com/Inovacomm/logo/main/logo_3cx-removebg-preview.png" alt="Fornecedor Logo">
+    </footer>
 </body>
-<footer>
-    <img id="fornecedor-logo" src="https://raw.githubusercontent.com/Inovacomm/logo/main/logo_3cx-removebg-preview.png" alt="Fornecedor Logo">
-</footer>
 </html>
