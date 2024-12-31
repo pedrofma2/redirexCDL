@@ -1,9 +1,6 @@
 <?php
 // Configuração do banco de dados
-$host = '"tmsrds.ccsfsf21rjgh.sa-east-1.rds.amazonaws.com"';
-$dbname = 'SistemaPedro';
-$user = 'root';
-$password = 'NunesST2023';
+
 
 try {
     // Conexão com o banco de dados
