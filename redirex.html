@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="./style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exibir Dados do Associado</title>
+    <title>Exibir Informações da Chamada</title>
     <script>
         // Função para obter parâmetros da URL
         function getQueryParam(param) {
@@ -12,7 +12,7 @@
             return urlParams.get(param);
         }
 
-        // Função para abrir nova aba com base na variável 'a'
+        // Função para abrir nova aba com a URL baseada na variável 'a'
         function abrirNovaAba() {
             const aValue = getQueryParam('a');
             if (aValue) {
@@ -25,21 +25,21 @@
 
         // Quando a página carregar
         window.onload = function () {
-            // Obter valores das variáveis 'dados', 'a' e 'number'
-            const dadosValue = getQueryParam('dados');
+            // Obter valores das variáveis da URL
             const numberValue = getQueryParam('number');
+            const fluxoValue = getQueryParam('fluxo');
 
             // Exibir valores na página
-            if (dadosValue) {
-                document.getElementById('dados-display').innerText = `Dados recebidos: ${dadosValue}`;
-            } else {
-                document.getElementById('dados-display').innerText = 'A variável "dados" não foi fornecida.';
-            }
-
             if (numberValue) {
                 document.getElementById('number-display').innerText = `Número do associado: ${numberValue}`;
             } else {
                 document.getElementById('number-display').innerText = 'O número do associado não foi fornecido.';
+            }
+
+            if (fluxoValue) {
+                document.getElementById('fluxo-display').innerText = `Fluxo: ${fluxoValue}`;
+            } else {
+                document.getElementById('fluxo-display').innerText = 'O fluxo não foi fornecido.';
             }
         };
     </script>
@@ -48,11 +48,11 @@
     <!-- Logotipo da empresa -->
     <img id="logo" src="https://raw.githubusercontent.com/Inovacomm/logo/main/tms_logo.png" alt="TMS Logo">
 
-    <h1>Informações do Associado</h1>
+    <h1>Informações da Chamada</h1>
 
     <!-- Exibição de informações -->
-    <p id="dados-display">Carregando informações...</p>
     <p id="number-display">Carregando número do associado...</p>
+    <p id="fluxo-display">Carregando fluxo...</p>
 
     <!-- Botão para abrir nova aba -->
     <button onclick="abrirNovaAba()">Abrir dados do usuário</button>
